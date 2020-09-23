@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: fetch origin/master
+    - name: Install venv
+      run: sudo apt-get install python3-venv
+    - name: Fetch origin/master
       run: git fetch origin master
     - name: List of changed file(s)
       run: git diff --name-only FETCH_HEAD
