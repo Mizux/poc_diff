@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: fetch origin
       run: git fetch origin
-    - name: origin/master
+    - name: List of changed file(s)
       run: git diff --name-only origin/master
 
     - name: Build clang-format docker
