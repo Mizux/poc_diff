@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: origin
+      run: git remote show origin
 
     - name: FETCH_HEAD
       run: git diff --name-only FETCH_HEAD
