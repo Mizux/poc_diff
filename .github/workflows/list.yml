@@ -8,13 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: origin
+    - name: remote show
       run: git remote show origin
+    - name: fetch origin
+      run: git fetch origin
+
+    - name: origin/master
+      run: git diff --name-only origin/master
 
     - name: FETCH_HEAD
       run: git diff --name-only FETCH_HEAD
-    - name: origin/master
-      run: git diff --name-only origin/master
 
     - name: Build clang-format docker
       run: cd .github/workflows && docker build --tag=linter .
